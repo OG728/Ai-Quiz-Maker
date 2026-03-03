@@ -1,0 +1,19 @@
+{
+  "name": "coolweb",
+  "version": "1.0.0",
+  "description": "Local Node.js portfolio web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
