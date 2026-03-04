@@ -14,6 +14,39 @@ Everything runs locally on your machine.
 - Node.js 18+ (recommended: latest LTS)
 - Ollama installed on your machine
 
+## Frontend Stack (React + shadcn + Tailwind + TypeScript)
+
+This repo now includes a Next.js frontend with:
+- TypeScript
+- Tailwind CSS
+- shadcn-style structure
+
+Important paths:
+- UI components: `components/ui`
+- Shared utilities: `lib/utils.ts`
+- Tailwind styles: `app/globals.css`
+
+Why `components/ui` matters:
+- It keeps reusable UI primitives in one stable location.
+- shadcn conventions and generators expect this structure.
+- It avoids mixing feature components with base UI building blocks.
+
+Run the frontend:
+
+```powershell
+npm run dev
+```
+
+Open:
+- `http://localhost:3002`
+
+If you need to set this up from scratch in another repo, use:
+
+```powershell
+npx create-next-app@latest . --typescript --tailwind --app
+npx shadcn@latest init
+```
+
 ## 1. Install Ollama
 
 Windows:
@@ -63,15 +96,8 @@ ollama serve
 npm start
 ```
 
-If port `3000` is busy:
-
-```powershell
-$env:PORT=3010; npm start
-```
-
 Open in browser:
-- `http://localhost:3000`
-- or `http://localhost:3010` if you used custom port
+- `http://localhost:3002`
 
 ## How to use
 
@@ -112,9 +138,7 @@ Open in browser:
     `ollama pull llama3.1:8b`
 
 - Port already in use for app
-  - Start on another port:
-    `$env:PORT=3010; npm start`
+  - Stop the other process on `3002` or change the script port in `package.json`.
 
 - `ollama` command not found
   - Restart terminal (or PC) after installation and try again.
-
